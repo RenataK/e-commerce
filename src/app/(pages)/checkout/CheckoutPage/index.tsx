@@ -18,8 +18,7 @@ import { CheckoutItem } from '../CheckoutItem'
 
 import classes from './index.module.scss'
 
-// const apiKey = `${process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY}`
-const apiKey = `${process.env.STRIPE_SECRET_KEY}`
+const apiKey = `${process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY}`
 const stripe = loadStripe(apiKey)
 
 export const CheckoutPage: React.FC<{
