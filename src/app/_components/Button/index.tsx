@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 'use client'
 
 import React, { ElementType } from 'react'
@@ -16,6 +17,7 @@ export type Props = {
   type?: 'submit' | 'button'
   disabled?: boolean
   invert?: boolean
+  children?: React.ReactNode
 }
 
 export const Button: React.FC<Props> = ({
@@ -29,6 +31,7 @@ export const Button: React.FC<Props> = ({
   type = 'button',
   disabled,
   invert,
+  children,
 }) => {
   let el = elFromProps
 
@@ -46,6 +49,7 @@ export const Button: React.FC<Props> = ({
   const content = (
     <div className={classes.content}>
       <span className={classes.label}>{label}</span>
+      {children} {/* addinf childing in case we'll want to pass additional icons, labels, arrows etc to further style the button */}
     </div>
   )
 
